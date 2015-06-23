@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        //filter
+
+        function getMethods(obj) {
+
+            return Object.getOwnPropertyNames(obj).filter(function (element) {
+                return typeof obj[element] === 'function';
+            });
+
+        }
+
+        console.log(getMethods(Array.prototype));
+
+        var numbers = [1,2,3,4,5];
+
+        var cubes = numbers.map(function (element, index, arr) {
+            return element * element * element;
+        });
+
+        var evencubes = numbers.filter(function (element) {
+            return element % 2 === 0;
+        }).map(function (element) {
+            return element * element * element;
+        });
+
+        console.log(evencubes);
+
+        function getPropertiesAndMethodValues(obj) {
+            // return all property values as an array
+            return Object.getOwnPropertyNames(obj).map(function (property_name) {
+               return obj[property_name];
+            });
+        }
+
+        console.log(getPropertiesAndMethodValues(Array.prototype));
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
