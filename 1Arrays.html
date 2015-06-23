@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Sparse Arrays</title>
+    <script>
+
+        var arr = new Array(6);
+        console.log(arr);
+
+        // common code
+        var x = [];
+        x[5] = 'Alejandro';
+        console.log(x); // sparse array - affect performance
+
+        var y = {};
+        y[5] = 'Alejandro'; // object approach
+
+        console.log(y);
+
+        // test cases
+        var p = x[5];
+
+        // test cases
+        var p = y[5];
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
