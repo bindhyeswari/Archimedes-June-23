@@ -12,7 +12,26 @@
             // if the element exists in the array,
             // print the number of times it occurs in the arry
             // else print 'element does not exist'
+
+            var startindex = arr.indexOf(element);
+            if (startindex === -1) {
+                console.log('element ', element, ' does not exist!');
+            } else {
+                console.log(arr.lastIndexOf(element) - startindex + 1);
+            }
         }
+
+        freq(8);
+
+        // todo: Write a binary search for arr and check the performance difference in jsperf
+
+        var numbers = [1,2,3,4,5]; // 5 * 6 / 2 = 15
+
+        var sum = numbers.reduce(function (prev, current) {
+            return prev + current;
+        }, 0);
+
+        console.log(sum);
 
 
 
