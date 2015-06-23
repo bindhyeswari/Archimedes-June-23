@@ -22,6 +22,11 @@
         var numbers = [1,2,3,4,5];
 
         console.log(Object.getOwnPropertyNames(Array.prototype));
+        var keys = Object.getOwnPropertyNames(Array.prototype);
+
+        console.log(keys);
+        console.log(typeof Array.prototype[keys[0]]);
+
 
         function printMethodNames(obj) {
 
@@ -29,12 +34,26 @@
             // 1. Get all property names as an array
             // 2. Loop over all the property names and print
             //    only those properties which have a typeof obj[prop] === 'function'
+            var keys = Object.getOwnPropertyNames(obj);
+            var methods = [];
+            for (var i = 0; i < keys.length; i++) {
+                var prop = keys[i];
+                console.log('property name: ', prop, ' | typeof property: ', typeof obj[prop]);
+                if (typeof obj[prop] === 'function') {
+                    methods.push(prop);
+                }
+            }
 
+            console.log(methods);
+
+            return methods;
 
             // prints an array consisting of method names only
         }
 
-        // var squares = numbers
+        console.log('=============');
+
+        printMethodNames(Array.prototype);
 
     </script>
 </head>
