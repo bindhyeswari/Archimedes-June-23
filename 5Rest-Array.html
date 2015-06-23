@@ -9,11 +9,22 @@
         console.log(countries[0]);
 
         // print out total population
+        var total = countries.reduce(function (total, country) {
+            return total + country.population;
+        }, 0);
+        console.log(total);
 
         // print out the names of all countries which have less than 2 neighbors
+        var countries_less_than_2_neigbhors = countries.filter(function (country) {
+            return country.borders.length < 2;
+        }).map(function (country) {
+            return country.name;
+        });
+
+        console.log(countries_less_than_2_neigbhors.join(', '));
 
         // print the following:
-        // name of a country: [ name of neigbor 1, name of  ]
+        // name of a country: [ name of neigbor 1, name of neigbor 2 ...  ]
 
     </script>
 </head>

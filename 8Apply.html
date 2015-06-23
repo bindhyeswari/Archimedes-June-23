@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        function sum() {
+
+            // converting arguments object to an array
+            console.log(arguments);
+            var args = Array.prototype.slice.call(arguments); // Array Like Objects - length, [i]
+
+            console.log(Object.getPrototypeOf(arguments) === Object.prototype);
+
+            console.log(arguments.toString());
+
+            var arr = [];
+            for (var i = 0; i < arguments.length; i++) {
+                arr.push(arguments[i]);
+            }
+            console.log('arr is ', arr);
+
+            return arr.reduce(function (a, b) {
+                return a + b;
+            });
+
+            /*return Array.prototype.reduce.call(arguments,function (a, b) {
+                return a + b;
+            });*/
+        }
+
+        console.log(sum(10, 11, 12, 13, 15));
+        console.log(sum(10, 12));
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <ul>
+        <li>Amy</li>
+        <li>Lei</li>
+        <li>Alejandro</li>
+        <li>Charles</li>
+    </ul>
+    <script>
+        var elements = Array.prototype.slice.call(document.getElementsByTagName('li'));
+        console.log(elements.map(function (li) {
+            return li.innerHTML;
+        }));
+    </script>
+</body>
+</html>

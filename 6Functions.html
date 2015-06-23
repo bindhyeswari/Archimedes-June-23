@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        // scoping and variables
+        // contexts
+
+        var x = 10;
+
+        console.log(window.x);
+
+        function test() {
+            var x; // undefined
+
+            console.log(x);
+            var square = function (z) {
+                return z * z;
+            };
+
+            x = 12;
+            console.log(square(x));
+
+
+        }
+
+        function test2() {
+            y = 15; // Implicit variable declaration
+            // global scope - global object
+        }
+
+        test2();
+
+        console.log(window.y);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
