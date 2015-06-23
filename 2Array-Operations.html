@@ -5,6 +5,26 @@
     <title></title>
     <script>
 
+
+        var numbers = [1,2,3,4,5];
+
+        // print the even numbers here
+
+        var evens = numbers.filter(function (element, index, arr) {
+            console.log('Element is ', element, ' at the index ', index, ' and the total array is ', arr);
+            return element % 2 === 0;
+        });
+
+        console.log(evens);
+
+        var arr = [{ name: 'Alejandro' }, { id: 'Amy' }, { id:10, name: 'Alejandro' }, { name: 'Songyan' }];
+
+        console.log(arr.filter(function (obj) {
+            return typeof obj['id'] !== 'undefined';
+        }));
+
+
+
         function test(x) {
             console.log('Value passed is ' , x);
         }
@@ -19,7 +39,7 @@
 
         invoke(test);
 
-        var numbers = [1,2,3,4,5];
+
 
         console.log(Object.getOwnPropertyNames(Array.prototype));
         var keys = Object.getOwnPropertyNames(Array.prototype);
