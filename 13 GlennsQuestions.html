@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        console.log('=================');
+
+        var fn = console.log.bind(console);
+
+        console.log = function (str) {
+            fn('Hello ' + str);
+        };
+
+        console.log('Charles');
+
+        console.log('=================');
+
+        // Array.prototype = {};
+
+        window.Array = function () {
+            console.log('test');
+        };
+
+        Array();
+
+        var arr = ['asdf', 'asdf'];
+
+        console.log(arr);
+
+        console.log(arr.constructor);
+
+        var newarr = new arr.constructor();
+        newarr.push('Glenn');
+        console.log(newarr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

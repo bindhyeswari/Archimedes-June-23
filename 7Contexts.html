@@ -27,7 +27,9 @@
             }
         };
 
+
         obj.printContext();
+        console.log(window.somefunc);
 
         var global_object = (function sayHello() { // access global object for any execution context
             // iife the context is the global object
@@ -50,9 +52,14 @@
 
 
 
+
+
     </script>
 </head>
 <body>
-
+<form action="/something" method="post">
+    <input type="text" name="username"/>
+    <input type="submit" value="Submit Form"/>
+</form>
 </body>
 </html>

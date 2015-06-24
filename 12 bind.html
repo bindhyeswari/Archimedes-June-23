@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        function sayHello(name) {
+            console.log('Hi, this is ' , name, '!');
+        }
+
+        // sayHello('Amy');
+
+        var arr = [sayHello, sayHello, sayHello];
+
+        var arr_bound_functions = ['Amy', 'Alejandro', 'Charles'].map(function (name) {
+            // bind the parameters to the function
+            return sayHello.bind(null, name); // sayHello
+        });
+
+        console.log(arr_bound_functions);
+
+        function invoker(arr) {
+            // any number of functions,
+            // prints "invoking function 1 --> name of function "
+            arr.forEach(function (fn) {
+                fn();
+            });
+        }
+
+        invoker(arr_bound_functions);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

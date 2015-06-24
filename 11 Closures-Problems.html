@@ -15,8 +15,15 @@
         console.log(elements);
 
         for (var i = 0; i < elements.length; i++) {
-            console.log();
+            elements[i].addEventListener('click', function () {
+                console.log(i);
+                console.log('The index is ', i, ', innerHTML is ', elements[i].innerHTML);
+            });
         }
+
+        console.log('the current value of i is ', i);
+
+
 
     </script>
 </body>
